@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
 import './App.css';
+import AlterHighScoreButton from './components/AlterHighScoreButton'
+import DisplayScore from './components/DisplayScore'
+import SubmitScoreForm from './components/SubmitScoreForm'
 
 function App() {
+
+  const [ isScore, setScore ] = useState(0)
+  const [ clickCount, setClickCount ] = useState(0)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div id="score-container">
+        <DisplayScore
+          isScore={isScore}
+        />
+        <AlterHighScoreButton
+          isScore={isScore}
+          setScore={setScore}
+          clickCount={clickCount}
+          setClickCount={setClickCount}  
+        />
+        <SubmitScoreForm
+          isScore={isScore}
+          setScore={setScore}
+          clickCount={clickCount}
+        />
+      </div> 
+      <div id="high-scores">
+
+      </div>
     </div>
   );
 }
