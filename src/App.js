@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <div id="score-container">
+        {/* probably dont need component to display, its just a p tag? */}
         <DisplayScore
           isScore={isScore}
         />
@@ -25,6 +26,7 @@ function App() {
           isScore={isScore}
           setScore={setScore}
           clickCount={clickCount}
+          setClickCount={setClickCount}
         />
       </div> 
       <div id="high-scores">

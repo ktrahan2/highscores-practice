@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function SubmitScoreForm({ isScore, setScore, clickCount }) {
+export default function SubmitScoreForm({ isScore, setScore, clickCount, setClickCount }) {
 
     const [ userName, setUserName ] = useState("")
 
@@ -9,29 +9,32 @@ export default function SubmitScoreForm({ isScore, setScore, clickCount }) {
     }
 
     const postScore = () => {
-        console.log(userName, isScore, clickCount)
-        // fetch("url", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-type": "application/json"
-        //     },
-        //     body: JSON.stringify({
-        //         name: userName,
-        //         score: isScore,
-        //         clicks: clickCount
-        //     })
-        // })
-        // setScore(0)
+        fetch("url", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({
+                name: userName,
+                score: isScore,
+                clicks: clickCount
+            })
+        })
+        console.log("im post fetching")
+        setScore(0)
+        setUserName("")
+        setClickCount(0)
     }
 
     return (
-        <form id="submit-score-form">
+        <>
             <div id="submit-name-input">
                 <label
                     htmlFor="user-name"
                 >Name:
                 </label>
                 <input
+                    id="username-input"
                     name="user-name"
                     type="text"
                     placeholder="Enter your name"
@@ -46,6 +49,6 @@ export default function SubmitScoreForm({ isScore, setScore, clickCount }) {
             >
                 Submit Score
             </button>
-        </form>
+        </>
     )
 }

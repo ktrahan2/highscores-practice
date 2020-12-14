@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 export default function AlterHighScoreButton({ isScore, setScore, clickCount, setClickCount }) {
 
@@ -15,18 +15,18 @@ export default function AlterHighScoreButton({ isScore, setScore, clickCount, se
 
     return (
         <>
-        { clickCount <= 10 ?
-            <button
-                className="button"
-                id="generate-new-score-button"
-                onClick={generateNewScore}
-            >
-                Winner Winner Chicken Dinner
-            </button>
-            : <p>
-                Out of clicks!
-            </p>
-        }
+            { clickCount <= 10 ?
+                <button
+                    className="button"
+                    id="generate-new-score-button"
+                    onClick={generateNewScore}
+                >
+                    Try Your Luck!
+                </button>
+                : <p id="out-of-clicks">
+                    Out of clicks!
+                </p>
+            }
         </>
     )
 }
