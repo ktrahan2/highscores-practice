@@ -24,7 +24,7 @@ export default function HighScoresTable({ highScores }) {
     }
 
     const averageClicks = (person) => {
-        return (person.score/person.clicks).toFixed(2)
+        return parseFloat((person.score/person.clicks).toFixed(2))
     }
 
     return (
