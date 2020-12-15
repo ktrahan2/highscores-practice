@@ -16,6 +16,18 @@ export default function SubmitScoreForm({
     }
 
     const postScore = () => {
+        setHighScores([...highScores, {
+            name: userName,
+            score: isScore,
+            clicks: clickCount
+        }])
+        postScoreFetch()
+        setScore(0)
+        setUserName("")
+        setClickCount(0)
+    }
+    
+    const postScoreFetch = () => {
         fetch("url", {
             method: "POST",
             headers: {
@@ -27,15 +39,6 @@ export default function SubmitScoreForm({
                 clicks: clickCount
             })
         })
-        console.log("im post fetching")
-        setScore(0)
-        setUserName("")
-        setClickCount(0)
-        setHighScores([...highScores, {
-            name: userName,
-            score: isScore,
-            clicks: clickCount
-        }])
     }
 
     return (
@@ -59,7 +62,7 @@ export default function SubmitScoreForm({
                 id="submit-score-button"
                 onClick={postScore}
             >
-                Submit Score
+                Send It!
             </button>
         </div>
     )

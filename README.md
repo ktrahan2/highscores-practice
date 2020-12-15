@@ -41,11 +41,9 @@ Example:
 
 6. Write a couple unit tests, and note why you chose to cover these particular areas of code. 
 
-
 Option: Developer's choice 
 
 If you like - rather than limit the number of clicks to 10 and prevent additional button clicks, reset the points counter to 0 on every 10th click of the button. Provide a brief explanation in comments what are the pros and cons of each restriction, in terms of usability and user experience.
-
 
 Bonus:
 

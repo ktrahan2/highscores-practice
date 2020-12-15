@@ -1,23 +1,32 @@
 import React from 'react'
 
 export default function HighScoresTable({ highScores }) {
-    //need this to only show the top 10 scores
+
     const createHighScoreRow = () => {
-        return highScores
-            .sort((a, b) => b.score - a.score)
-            .map((person, index) => {
-                if (index < 10) {
-                    return (
-                        <tr key={index}>
-                            <td>{person.name}</td>
-                            <td>{person.score}</td>
-                            <td>{person.clicks}</td>
-                            <td>{person.score/person.clicks}</td>
-                        </tr>
-                    )
-                }
+        sortScores(highScores)
+        return highScores.map((person, index) => {
+            if (index < 10) {
+                return (
+                    <tr key={index}>
+                        <td>{person.name}</td>
+                        <td>{person.score}</td>
+                        <td>{person.clicks}</td>
+                        <td>{averageClicks(person)}</td>
+                    </tr>
+                )
+            }
         })
     }
+
+    //could refactor to not use .sort if time is a concern. currently worst-case O(n2)
+    const sortScores = (scores) => {
+        return scores.sort( ( a, b ) => b.score - a.score)
+    }
+
+    const averageClicks = (person) => {
+        return (person.score/person.clicks).toFixed(2)
+    }
+
     return (
         <table id="high-scores-table">
             <tbody>

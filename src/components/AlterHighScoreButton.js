@@ -15,7 +15,7 @@ export default function AlterHighScoreButton({ isScore, setScore, clickCount, se
 
     return (
         <>
-            { clickCount <= 10 ?
+            { clickCount < 10 ?
             <>
                 <p>{(10 - clickCount) + " " + `Clicks remaining!`}</p>
                 <button
