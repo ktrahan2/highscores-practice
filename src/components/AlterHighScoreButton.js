@@ -16,6 +16,8 @@ export default function AlterHighScoreButton({ isScore, setScore, clickCount, se
     return (
         <>
             { clickCount <= 10 ?
+            <>
+                <p>{(10 - clickCount) + " " + `Clicks remaining!`}</p>
                 <button
                     className="button"
                     id="generate-new-score-button"
@@ -23,6 +25,7 @@ export default function AlterHighScoreButton({ isScore, setScore, clickCount, se
                 >
                     Try Your Luck!
                 </button>
+                </>
                 : <p id="out-of-clicks">
                     Out of clicks!
                 </p>

@@ -27,8 +27,8 @@ export default function SubmitScoreForm({ isScore, setScore, clickCount, setClic
     }
 
     return (
-        <>
-            <div id="submit-name-input">
+        <div id="submit-name-container">
+            <div id="name-container">
                 <label
                     htmlFor="user-name"
                 >Name:
@@ -49,6 +49,6 @@ export default function SubmitScoreForm({ isScore, setScore, clickCount, setClic
             >
                 Submit Score
             </button>
-        </>
+        </div>
     )
 }

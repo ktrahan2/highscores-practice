@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+HighScoreApp: 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+First, set up a React app in a github repo that you can share with Cobalt engineering; if this is troublesome, please let us know where you got stuck and provide an alternative way of assessing your code.
 
-### `yarn start`
+Then,
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Create a React component called HighScoreApp that consists of:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<!-- 1. a button, which adjusts the users score by a number between -100 and 100 when clicked -->
 
-### `yarn test`
+<!-- 2. display of the current score -->
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- 3. an input field, labeled 'Name', where the user can type their name -->
 
-### `yarn build`
+<!-- 4. a submit button that will make a POST request (to dummy endpoint here) to save their score, name, and number of times they clicked to reach that score -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- **Caveat: the user can only click a maximum of 10 times before submitting their score; once they submit their score, the click counter gets reset to 0. -->
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Continue with additional requirements:
 
-### `yarn eject`
+1. Style the page; for inspiration you can visit: cobalt.io
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<!-- 2. Add messaging to let the user know how many clicks they have left, and if they have reached the maximum number of 10 clicks. -->
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Add a dummied data fetch, assuming that the API service will send you the proper data as an array of objects.  The results will NOT be sorted.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Example:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[{name: "Jane Doe", totalPoints: 157, clicks: 5},
 
-## Learn More
+{name: "Lily Allen", totalPoints: 234, clicks: 8},
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+{name: "John Smith", totalPoints: 390, clicks: 10}]
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4.  Display a leaderboard table of the top 10 total points scores, showing:: name, score, number of clicks, average points per click.
 
-### Code Splitting
+5. Create a real-time update of the table, so that if the person playing achieves a score that puts them in the leaderboard, show their position in the table (they still need to click `Send it!` button to save their score), and adjust other positions accordingly (knocking the lowest score out of the display)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+6. Write a couple unit tests, and note why you chose to cover these particular areas of code. 
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Option: Developer's choice 
 
-### Making a Progressive Web App
+If you like - rather than limit the number of clicks to 10 and prevent additional button clicks, reset the points counter to 0 on every 10th click of the button. Provide a brief explanation in comments what are the pros and cons of each restriction, in terms of usability and user experience.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+Bonus:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Give the user the option to toggle the table display between the top 10 total points, or the top 10 avg points per click. Add whatever UI elements/messaging are necessary to accomplish this.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- What API parameters would you request be made available, to optimize data processing on the front end?  Assume those parameters are made available to you, and incorporate them into your code. 

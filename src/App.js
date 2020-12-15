@@ -22,13 +22,13 @@ function App() {
           clickCount={clickCount}
           setClickCount={setClickCount}  
         />
-        <SubmitScoreForm
-          isScore={isScore}
-          setScore={setScore}
-          clickCount={clickCount}
-          setClickCount={setClickCount}
-        />
       </div> 
+      <SubmitScoreForm
+        isScore={isScore}
+        setScore={setScore}
+        clickCount={clickCount}
+        setClickCount={setClickCount}
+      />
       <div id="high-scores">
 
       </div>
