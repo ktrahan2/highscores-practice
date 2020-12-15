@@ -1,6 +1,13 @@
 import React, { useState } from 'react'
 
-export default function SubmitScoreForm({ isScore, setScore, clickCount, setClickCount }) {
+export default function SubmitScoreForm({ 
+    isScore, 
+    setScore, 
+    clickCount, 
+    setClickCount,
+    highScores,
+    setHighScores 
+}) {
 
     const [ userName, setUserName ] = useState("")
 
@@ -24,6 +31,11 @@ export default function SubmitScoreForm({ isScore, setScore, clickCount, setClic
         setScore(0)
         setUserName("")
         setClickCount(0)
+        setHighScores([...highScores, {
+            name: userName,
+            score: isScore,
+            clicks: clickCount
+        }])
     }
 
     return (

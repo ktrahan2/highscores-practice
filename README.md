@@ -25,7 +25,7 @@ Continue with additional requirements:
 
 <!-- 2. Add messaging to let the user know how many clicks they have left, and if they have reached the maximum number of 10 clicks. -->
 
-3. Add a dummied data fetch, assuming that the API service will send you the proper data as an array of objects.  The results will NOT be sorted.
+<!-- 3. Add a dummied data fetch, assuming that the API service will send you the proper data as an array of objects.  The results will NOT be sorted.
 
 Example:
 
@@ -33,11 +33,11 @@ Example:
 
 {name: "Lily Allen", totalPoints: 234, clicks: 8},
 
-{name: "John Smith", totalPoints: 390, clicks: 10}]
+{name: "John Smith", totalPoints: 390, clicks: 10}] -->
 
-4.  Display a leaderboard table of the top 10 total points scores, showing:: name, score, number of clicks, average points per click.
+<!-- 4.  Display a leaderboard table of the top 10 total points scores, showing:: name, score, number of clicks, average points per click. -->
 
-5. Create a real-time update of the table, so that if the person playing achieves a score that puts them in the leaderboard, show their position in the table (they still need to click `Send it!` button to save their score), and adjust other positions accordingly (knocking the lowest score out of the display)
+<!-- 5. Create a real-time update of the table, so that if the person playing achieves a score that puts them in the leaderboard, show their position in the table (they still need to click `Send it!` button to save their score), and adjust other positions accordingly (knocking the lowest score out of the display) -->
 
 6. Write a couple unit tests, and note why you chose to cover these particular areas of code. 
 
