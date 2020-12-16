@@ -1,5 +1,9 @@
 import React from 'react'
 
+export const averageClicks = (person) => {
+    return parseFloat((person.score/person.clicks).toFixed(2))
+}
+
 export default function HighScoresTable({ highScores }) {
 
     const createHighScoreRow = () => {
@@ -23,9 +27,7 @@ export default function HighScoresTable({ highScores }) {
         return scores.sort( ( a, b ) => b.score - a.score)
     }
 
-    const averageClicks = (person) => {
-        return parseFloat((person.score/person.clicks).toFixed(2))
-    }
+    
 
     return (
         <table id="high-scores-table">
