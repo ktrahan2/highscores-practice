@@ -1,24 +1,25 @@
 import React from 'react'
+import {averageClicks} from '../../utils/averageScore'
 
-export const averageClicks = (person) => {
-    return parseFloat((person.score/person.clicks).toFixed(2))
-}
 
 export default function HighScoresTable({ highScores }) {
 
     const createHighScoreRow = () => {
         sortScores(highScores)
-        return highScores.map((person, index) => {
-            if (index < 10) {
-                return (
-                    <tr key={index}>
-                        <td>{person.name}</td>
-                        <td>{person.score}</td>
-                        <td>{person.clicks}</td>
-                        <td>{averageClicks(person)}</td>
-                    </tr>
-                )
-            }
+        let slicedHighScores = highScores;
+        if (highScores.length > 10 ) {
+            slicedHighScores = highScores.slice(9)
+        }
+
+        return slicedHighScores.map((person, index) => {
+            return (
+                <tr key={index}>
+                    <td>{person.name}</td>
+                    <td>{person.score}</td>
+                    <td>{person.clicks}</td>
+                    <td>{averageClicks(person)}</td>
+                </tr>
+            )
         })
     }
 

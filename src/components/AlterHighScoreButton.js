@@ -25,10 +25,10 @@ export default function AlterHighScoreButton({ isScore, setScore, clickCount, se
                 >
                     Try Your Luck!
                 </button>
-                </>
-                : <p id="out-of-clicks">
-                    Out of clicks!
-                </p>
+            </>
+            : <p id="out-of-clicks">
+                Out of clicks!
+            </p>
             }
         </>
     )
